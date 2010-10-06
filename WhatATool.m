@@ -1,4 +1,6 @@
+
 #import <Foundation/Foundation.h>
+#import "PolygonShape.h"
 
 
 void PrintPathInfo() {
@@ -85,8 +87,39 @@ void PrintIntrospectionInfo() {
 void PrintPolygonInfo()
 {
 	
+	NSLog(@"\n");
+	NSLog(@"//Section 6//");
+	
+	NSMutableArray * list = [[NSMutableArray alloc]init];
+	
+	PolygonShape *poly = [[PolygonShape alloc] initWithNumberOfSides:4 minimumNumberOfSides:3 maximumNumberOfSides:7];
+	[list addObject: poly];
+	NSLog(@"%@", [poly description]);
+	
+	PolygonShape *poly2 =[[PolygonShape alloc] initWithNumberOfSides:6 minimumNumberOfSides:5 maximumNumberOfSides:9];
+	[list addObject: poly2];
+	NSLog(@"%@", [poly2 description]);
+	
+	PolygonShape *poly3 =[[PolygonShape alloc] initWithNumberOfSides:12 minimumNumberOfSides:9 maximumNumberOfSides:12];
+	[list addObject: poly3];
+	NSLog(@"%@", [poly3 description]);
+	
+	NSEnumerator *enu = [list objectEnumerator];
+	id item;
+	while (item = [enu nextObject])
+	{
+		[item  setNumberOfSides:10];
+	}
+	
+	[poly release];
+	[poly2 release];
+	[poly3 release];
+	[list release];
+	
+	
+	
 }
-
+ 
 
 int main (int argc, const char * argv[]) {
     

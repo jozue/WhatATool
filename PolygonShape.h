@@ -11,7 +11,9 @@
 
 @interface PolygonShape : NSObject {
 	//int numberOfSides;
-
+	int numberOfSides;
+	int minimumNumberOfSides;
+	int maximumNumberOfSides;
 }
 
 @property int numberOfSides;
@@ -25,5 +27,7 @@
 - (void) setNumberOfSides: (int) num;
 - (void) setMinimumNumberOfSides: (int) num;
 - (void) setMaximumNumberOfSides: (int) num;
+
+- (id)initWithNumberOfSides:(int)sides minimumNumberOfSides:(int)min maximumNumberOfSides:(int)max;
 
 @end
